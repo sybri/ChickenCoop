@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Sylvain Brissy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 86.4, "left": -436.76, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -140.39,
+      "left": -85.97,
+      "attrs": { 
+        "size": "17",
+        "gearRatio": "1:2",
+        "arrow": "orange" 
+      }
+      
+    },
+    { "type": "chip-uln2003", "id": "chip1", "top": 183.42, "left": -187.2, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": 369.2, "left": -294.5, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:16", "chip1:IN3", "green", [ "h0" ] ],
+    [ "esp:17", "chip1:IN2", "green", [ "h0" ] ],
+    [ "esp:18", "chip1:IN1", "green", [ "h96", "v9.6" ] ],
+    [ "esp:19", "chip1:IN4", "green", [ "h48", "v57.6" ] ],
+    [ "esp:GND.3", "chip1:GND", "black", [ "h57.6", "v86.4", "h182.4", "v9.6", "h9.6" ] ],
+    [ "esp:5V", "chip1:VCC", "red", [ "h0.15", "v19.2", "h211.2", "v-115.2" ] ],
+    [ "chip1:OUT1", "stepper1:A-", "green", [ "h0" ] ],
+    [ "chip1:OUT2", "stepper1:A+", "green", [ "h0" ] ],
+    [ "chip1:OUT3", "stepper1:B+", "green", [ "h0" ] ],
+    [ "chip1:OUT4", "stepper1:B-", "green", [ "h0" ] ],
+    [ "esp:4", "sw1:1", "green", [ "h28.8", "v192", "h9.6" ] ],
+    [ "sw1:2", "chip1:GND", "black", [ "v19.2", "h105.7", "v0", "h57.6" ] ]
+  ],
+  "dependencies": {}
+}

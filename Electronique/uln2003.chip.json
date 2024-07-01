@@ -1,0 +1,17 @@
+{
+  "name": "uln2003",
+  "author": "Sylvain Brissy",
+  "pins": [
+    "VCC",
+    "IN1",
+    "IN2",
+    "IN3",
+    "IN4",
+    "GND",
+    "OUT1",
+    "OUT2",
+    "OUT3",
+    "OUT4"
+  ],
+  "controls": []
+}
